@@ -4,14 +4,12 @@ import java.util.Set;
 
 public class ContainsDuplicate {
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3, 4, 5, 3};
+        int[] nums = new int[] { 1, 2, 3, 4, 5, 3 };
         System.out.println(containsDuplicate(nums));
     }
 
     /**
-     * Use hashset
-     * Time: O(n)
-     * Space: O(n)
+     * Use hashset Time: O(n) Space: O(n)
      *
      * @param nums arrays
      * @return True or False
@@ -27,11 +25,8 @@ public class ContainsDuplicate {
         return false;
     }
 
-
     /**
-     * Use sort
-     * Time: O(nlogn)
-     * Space: O(1)
+     * Use sort Time: O(nlogn) Space: O(1)
      *
      * @param nums arrays
      * @return True or False
@@ -46,11 +41,8 @@ public class ContainsDuplicate {
         return false;
     }
 
-
     /**
-     * Direct Search
-     * Time: O(n^2)
-     * Space: O(1)
+     * Direct Search Time: O(n^2) Space: O(1)
      *
      * @param nums arrays
      * @return True or False
