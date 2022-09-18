@@ -33,17 +33,45 @@ public class ReverseLinkedList {
 
     }
 
-    public static ListNode reverseList(ListNode head) {
-        ListNode pre = null;
-        ListNode nxt = null;
+    /**
+     * Use iteratively search Time: O(n) Space: O(1)
+     * 
+     * @param nums
+     * @param targetk
+     * @return indices of the nums
+     */
+    public static ListNode reverseList1(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = null;
 
         while (head != null) {
-            pre = nxt;
-            nxt = head;
+            prev = curr;
+            curr = head;
             head = head.next;
-            nxt.next = pre;
+            curr.next = prev;
         }
-        return nxt;
+        return curr;
+    }
+
+    /**
+     * Use recursively search Time: O(n) Space: O(n)
+     * 
+     * @param nums
+     * @param targetk
+     * @return indices of the nums
+     */
+    public static ListNode reverseList(ListNode head) {
+        return rev(head, null);
+    }
+
+    public static ListNode rev(ListNode head, ListNode prev) {
+        if (head == null) {
+            return prev;
+        }
+
+        ListNode temp = head.next;
+        head.next = prev;
+        return rev(temp, head);
     }
 
 }
